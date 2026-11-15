@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+ <queries><package android:name="com.whatsapp"/><package android:name="com.whatsapp.w4b"/></queries>
+ <application android:label="Darija Stickers" android:theme="@android:style/Theme.Material.Light.NoActionBar" android:usesCleartextTraffic="false" android:allowBackup="false">
+  <activity android:name=".MainActivity" android:exported="true"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter></activity>
+  <provider android:name=".StickerProvider" android:authorities="com.darijastickers.app.stickercontentprovider" android:exported="true" android:grantUriPermissions="true" android:readPermission="com.whatsapp.sticker.READ">
+   <intent-filter><action android:name="android.content.action.STICKER_PACK"/></intent-filter>
+   <meta-data android:name="com.whatsapp.sticker_packs" android:resource="@raw/sticker_packs"/>
+  </provider>
+ </application>
+</manifest>
